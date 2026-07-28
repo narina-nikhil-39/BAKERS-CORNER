@@ -1,0 +1,37 @@
+body {
+    background-color: #120A05;
+    background-image: url('../images/logo.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 200px auto;
+    color: #1A0D00;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3, h4 {
+    color: #E5A93C;
+}
+
+input[type="button"], input[type="submit"] {
+    background-color: #E5A93C;  
+    color: #120A05;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover {
+    background-color: #FFFFFF;  
+    color: #120A05;            
+}
+
+a {
+    color: #FFFFFF;          
+    text-decoration: none;     
+}
