@@ -1,0 +1,60 @@
+:root{
+	--bg:#fff8f0;
+	--card:#ffffff;
+	--accent:#c65a2a;
+	--muted:#666;
+	--max-width:1100px;
+}
+
+*{box-sizing:border-box}
+
+body{
+	font-family:Segoe UI, Roboto, Arial, sans-serif;
+	background:var(--bg);
+	color:#222;
+	margin:0;
+	padding:20px;
+	text-align:center;
+}
+
+header{max-width:var(--max-width);margin:0 auto 20px;padding:18px;background:var(--card);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+
+h1, h2, h3, h4{
+	color:var(--accent);
+	margin:8px 0;
+}
+
+main{max-width:var(--max-width);margin:20px auto;padding:18px}
+
+input[type="button"], input[type="submit"]{
+	background:var(--accent);
+	color:#fff;
+	border:none;
+	padding:10px 16px;
+	margin:5px;
+	font-weight:bold;
+	cursor:pointer;
+	border-radius:6px;
+	font-size:14px;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover{
+	background:#a84620;
+	color:#fff;
+}
+
+a{
+	color:var(--accent);
+	text-decoration:none;
+}
+
+footer{max-width:var(--max-width);margin:30px auto;padding:20px;text-align:center;color:var(--muted);background:var(--card);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+
+footer h2{color:var(--accent)}
+
+footer p{margin:6px 0;color:#444}
+
+@media (max-width:520px){
+	body{padding:12px}
+	header, main, footer{padding:12px}
+}

@@ -1,0 +1,15 @@
+/* Registration page styles */
+*{box-sizing:border-box}
+body{font-family:Segoe UI, Roboto, Arial, sans-serif;background:#fff;margin:0;color:#222}
+.reg-container{max-width:900px;margin:28px auto;padding:18px}
+.reg-card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.reg-grid .form-group{display:flex;flex-direction:column}
+label{font-size:14px;margin-bottom:6px;color:#444}
+input[type="text"],input[type="email"],input[type="password"],select{padding:10px;border:1px solid #e6e6e6;border-radius:6px}
+.full-width{grid-column:1 / -1}
+.submit-row{display:flex;justify-content:flex-end;margin-top:14px}
+.btn-primary{background:#c65a2a;color:#fff;padding:10px 16px;border-radius:6px;border:none;cursor:pointer}
+
+@media (max-width:700px){.reg-grid{grid-template-columns:1fr}.submit-row{justify-content:center}}
+
