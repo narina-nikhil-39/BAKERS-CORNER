@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Chocolate Cake",
+        "category": "Cake",
+        "price": 500
+    },
+    {
+        "name": "Donuts",
+        "category": "Bakery",
+        "price": 80
+    },
+    {
+        "name": "Cookies",
+        "category": "Bakery",
+        "price": 150
+    }
+]

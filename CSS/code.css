@@ -1,0 +1,260 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background:
+        radial-gradient(ellipse at 50% 0, #382314 0, #1b1009 42%, #100905 100%);
+    color: #fff9ef;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1, h2, h3, h4 {
+    color: #f0bd55;
+}
+
+.brand-header {
+    width: min(100%, 800px);
+    margin: 0 auto 26px;
+    padding: 12px 16px 16px;
+    border: 1px solid #67451d;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1d120c, #0c0806);
+    box-shadow: 0 12px 34px #0008;
+}
+
+.brand-logo {
+    display: block;
+    width: min(100%, 560px);
+    height: auto;
+    margin: 0 auto 12px;
+    border-radius: 5px;
+}
+
+.brand-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.brand-nav a,
+.btn,
+button,
+input[type="button"],
+input[type="submit"] {
+    display: inline-block;
+    width: auto;
+    margin: 4px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 6px;
+    background: linear-gradient(180deg, #ffd45d, #e6a92f);
+    box-shadow: 0 3px 0 #9c6718;
+    color: #211306;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 150ms ease, filter 150ms ease;
+}
+
+.brand-nav a:hover,
+.btn:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    filter: brightness(1.12);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+a {
+    color: #f0bd55;
+}
+
+a:hover {
+    color: #ffe5a1;
+}
+
+.lab-page {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+}
+
+.lab-page > h1 {
+    margin: 20px 0 8px;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    text-shadow: 0 2px 14px #e5a93c55;
+}
+
+.lab-page > h2 {
+    margin: 8px 0 20px;
+}
+
+.form-panel,
+.output-panel,
+.product-card,
+.info-panel {
+    border: 1px solid #735024;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #24170e, #120c08);
+    box-shadow: 0 8px 20px #0005;
+}
+
+.form-panel {
+    width: min(100%, 430px);
+    margin: 20px auto;
+    padding: 22px;
+}
+
+.lab-form {
+    display: grid;
+    gap: 8px;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 8px;
+    color: #f0bd55;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    min-height: 40px;
+    padding: 9px 11px;
+    border: 1px solid #8b6734;
+    border-radius: 5px;
+    background: #100b07;
+    color: #fff9ef;
+    font: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #e5a93c;
+    outline-offset: 1px;
+}
+
+p {
+    margin-top: 12px;
+    color: #fff9ef;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.status {
+    min-height: 1.5em;
+    color: #ffe5a1;
+}
+
+.output-panel {
+    max-width: 700px;
+    margin: 22px auto;
+    padding: 18px;
+    color: #25190f;
+    background: #fff8e9;
+    text-align: left;
+    white-space: pre-line;
+}
+
+.output-panel p {
+    color: #25190f;
+}
+
+.catalogue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+    gap: 16px;
+    width: min(100%, 1000px);
+    margin: 24px auto;
+}
+
+.product-card {
+    overflow: hidden;
+    padding: 10px;
+    border-color: #80602d;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px #0008;
+}
+
+.product-visual {
+    display: grid;
+    min-height: 145px;
+    place-items: center;
+    border: 1px solid #997342;
+    border-radius: 7px;
+    background:
+        radial-gradient(ellipse at 50% 70%, #ffffff38, transparent 58%),
+        linear-gradient(145deg, #69452b, #2a1b12);
+    font-size: 5rem;
+    line-height: 1;
+}
+
+.product-card h2,
+.product-card h3 {
+    margin: 12px 4px 4px;
+}
+
+.product-card p {
+    margin: 4px;
+}
+
+.product-price {
+    color: #ffe09a;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.login-wrapper {
+    width: min(100%, 430px);
+    margin: 70px auto 20px;
+    padding: 22px;
+    border: 1px solid #735024;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #24170e, #120c08);
+}
+
+.login-wrapper form {
+    display: grid;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 12px;
+    }
+
+    .brand-header {
+        padding: 10px;
+    }
+
+    .brand-nav a {
+        padding: 9px 12px;
+    }
+
+    .product-visual {
+        min-height: 125px;
+    }
+}

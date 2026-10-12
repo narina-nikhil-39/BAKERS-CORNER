@@ -1,0 +1,16 @@
+<header class="site-header">
+    <img
+        class="brand-logo"
+        src="assets/logo.png"
+        alt="Since 1996 — Bakers Corner, Bakers & Confectioners"
+    >
+    <nav aria-label="Main navigation">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a routerLink="/products" routerLinkActive="active">Products</a>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+        <a routerLink="/binding" routerLinkActive="active">Data Binding</a>
+    </nav>
+</header>
+<main class="content">
+    <router-outlet></router-outlet>
+</main>

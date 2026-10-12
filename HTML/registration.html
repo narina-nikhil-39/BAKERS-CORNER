@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakers Corner - Registration</title>
+    <link rel="stylesheet" href="../CSS/code.css">
+</head>
+<body>
+    <header class="brand-header">
+        <img class="brand-logo" src="../logo.png" alt="Since 1996 — Bakers Corner, Bakers & Confectioners">
+        <nav class="brand-nav" aria-label="Main navigation">
+            <a href="landingpage.html">HOME</a>
+            <a href="catalogue.html">OUR PRODUCTS</a>
+            <a href="login.html">LOGIN</a>
+            <a href="registration.html">SIGN UP</a>
+        </nav>
+    </header>
+    <main class="lab-page">
+        <h1>BAKERS CORNER</h1>
+        <h2>Create an account</h2>
+        <form id="registration-form" class="lab-form" novalidate>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" inputmode="numeric"
+                   autocomplete="tel" pattern="[0-9]{10}" maxlength="10" required>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" autocomplete="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"
+                   autocomplete="new-password" minlength="6" required>
+
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3"></textarea>
+
+            <button type="submit">SIGN UP</button>
+            <p id="registration-result" class="status" role="status" aria-live="polite"></p>
+        </form>
+    </main>
+    <script>
+        const registrationForm = document.getElementById("registration-form");
+        const registrationResult = document.getElementById("registration-result");
+
+        registrationForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const mobile = document.getElementById("mobile").value.trim();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+
+            if (!name) {
+                registrationResult.textContent = "Please enter your name.";
+                return;
+            }
+            if (!/^\d{10}$/.test(mobile)) {
+                registrationResult.textContent = "Enter a valid 10 digit mobile number.";
+                return;
+            }
+            if (!username) {
+                registrationResult.textContent = "Please enter a username.";
+                return;
+            }
+            if (password.length < 6) {
+                registrationResult.textContent = "Password must contain at least 6 characters.";
+                return;
+            }
+
+            registrationResult.textContent = "Registration successful.";
+        });
+    </script>
+</body>
+</html>

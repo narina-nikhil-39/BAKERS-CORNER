@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakers Corner - Fetch Text</title>
+    <link rel="stylesheet" href="../CSS/code.css">
+</head>
+<body>
+    <header class="brand-header">
+        <img class="brand-logo" src="../logo.png" alt="Since 1996 — Bakers Corner, Bakers & Confectioners">
+        <nav class="brand-nav" aria-label="Main navigation">
+            <a href="landingpage.html">HOME</a>
+            <a href="catalogue.html">OUR PRODUCTS</a>
+            <a href="login.html">LOGIN</a>
+            <a href="registration.html">SIGN UP</a>
+        </nav>
+    </header>
+    <main class="lab-page">
+        <h2>Weekly Offers</h2>
+        <button id="load-offers" type="button">Load Offers</button>
+        <div id="offers-result" class="output-panel" role="status" aria-live="polite">Click “Load Offers” to see this week’s fresh bakery deals.</div>
+    </main>
+    <script>
+        const offersResult = document.getElementById("offers-result");
+        document.getElementById("load-offers").addEventListener("click", async () => {
+            offersResult.textContent = "Loading offers...";
+            try {
+                const response = await fetch("offers.txt");
+                if (!response.ok) {
+                    throw new Error(`Request failed (${response.status}).`);
+                }
+                offersResult.textContent = await response.text();
+            } catch (error) {
+                offersResult.textContent =
+                    `Could not load offers. Run this page using a local web server. ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>

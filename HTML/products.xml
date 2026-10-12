@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bakery SYSTEM "bakery.dtd">
+<bakery>
+    <product>
+        <name>Chocolate Cake</name>
+        <category>Cake</category>
+        <price>500</price>
+    </product>
+    <product>
+        <name>Black Forest Cake</name>
+        <category>Cake</category>
+        <price>600</price>
+    </product>
+    <product>
+        <name>Donuts</name>
+        <category>Bakery</category>
+        <price>80</price>
+    </product>
+</bakery>

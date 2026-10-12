@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakers Corner - Catalogue</title>
+    <link rel="stylesheet" href="../CSS/code.css">
+</head>
+<body>
+    <header class="brand-header">
+        <img class="brand-logo" src="../logo.png" alt="Since 1996 — Bakers Corner, Bakers & Confectioners">
+        <nav class="brand-nav" aria-label="Main navigation">
+            <a href="landingpage.html">HOME</a>
+            <a href="catalogue.html">OUR PRODUCTS</a>
+            <a href="login.html">LOGIN</a>
+            <a href="registration.html">SIGN UP</a>
+        </nav>
+    </header>
+    <main class="lab-page">
+        <h2>Our Catalogue</h2>
+        <div class="catalogue-grid">
+            <article class="product-card">
+                <div class="product-visual" aria-hidden="true">🍰</div>
+                <h3>Chocolate Cake</h3>
+                <p class="product-price">₹500</p>
+                <button type="button" data-product="Chocolate Cake">Order</button>
+            </article>
+            <article class="product-card">
+                <div class="product-visual" aria-hidden="true">🎂</div>
+                <h3>Black Forest Cake</h3>
+                <p class="product-price">₹600</p>
+                <button type="button" data-product="Black Forest Cake">Order</button>
+            </article>
+            <article class="product-card">
+                <div class="product-visual" aria-hidden="true">🍩</div>
+                <h3>Donuts</h3>
+                <p class="product-price">₹80</p>
+                <button type="button" data-product="Donuts">Order</button>
+            </article>
+            <article class="product-card">
+                <div class="product-visual" aria-hidden="true">🍪</div>
+                <h3>Cookies</h3>
+                <p class="product-price">₹150</p>
+                <button type="button" data-product="Cookies">Order</button>
+            </article>
+        </div>
+        <p id="order-result" class="status" role="status" aria-live="polite"></p>
+    </main>
+    <script>
+        document.querySelectorAll("[data-product]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const product = button.dataset.product;
+                document.getElementById("order-result").textContent =
+                    `You selected: ${product}`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakers Corner - JSON Products</title>
+    <link rel="stylesheet" href="../CSS/code.css">
+</head>
+<body>
+    <header class="brand-header">
+        <img class="brand-logo" src="../logo.png" alt="Since 1996 — Bakers Corner, Bakers & Confectioners">
+        <nav class="brand-nav" aria-label="Main navigation">
+            <a href="landingpage.html">HOME</a>
+            <a href="catalogue.html">OUR PRODUCTS</a>
+            <a href="login.html">LOGIN</a>
+            <a href="registration.html">SIGN UP</a>
+        </nav>
+    </header>
+    <main class="lab-page">
+        <h2>Bakers Corner Products</h2>
+        <button id="load-products" type="button">Load Products</button>
+        <div id="products" class="catalogue-grid" aria-live="polite"></div>
+        <p id="products-error" class="status output-panel" role="status"></p>
+    </main>
+    <script>
+        const productsContainer = document.getElementById("products");
+        const productsError = document.getElementById("products-error");
+
+        document.getElementById("load-products").addEventListener("click", async () => {
+            productsContainer.replaceChildren();
+            productsError.textContent = "Loading products...";
+            try {
+                const response = await fetch("products.json");
+                if (!response.ok) {
+                    throw new Error(`Request failed (${response.status}).`);
+                }
+                const products = await response.json();
+                if (!Array.isArray(products)) {
+                    throw new Error("The product data has an invalid format.");
+                }
+
+                products.forEach((product) => {
+                    const card = document.createElement("article");
+                    card.className = "product-card";
+                    const visual = document.createElement("div");
+                    visual.className = "product-visual";
+                    visual.setAttribute("aria-hidden", "true");
+                    visual.textContent = product.name.includes("Cake") ? "🍰"
+                        : product.name.includes("Donut") ? "🍩" : "🍪";
+                    const name = document.createElement("h2");
+                    name.textContent = product.name;
+                    const category = document.createElement("p");
+                    category.textContent = `Category: ${product.category}`;
+                    const price = document.createElement("p");
+                    price.textContent = `Price: ₹${product.price}`;
+                    card.append(visual, name, category, price);
+                    productsContainer.append(card);
+                });
+                productsError.textContent = "";
+            } catch (error) {
+                productsError.textContent =
+                    `Could not load products. Run this page using a local web server. ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>
